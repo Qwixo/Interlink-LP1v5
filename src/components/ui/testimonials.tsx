@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { cn } from "../../lib/utils";
 import { Button } from "./button";
 import { Card } from "./card";
-import { Icons } from "./icons";
 
 interface Testimonial {
   image: string;
@@ -29,15 +28,13 @@ export function Testimonials({
 }: TestimonialsProps) {
   const [showAll, setShowAll] = useState(false);
 
-  const openInNewTab = (url: string) => {
-    window.open(url, "_blank")?.focus();
-  };
-
   return (
     <div className={className}>
       <div className="flex flex-col items-center justify-center pt-5">
         <div className="flex flex-col gap-5 mb-8">
-          <h2 className="text-center text-4xl font-medium text-[#064088]">{title}</h2>
+          {title && (
+            <h2 className="text-center text-4xl font-medium text-[#064088]">{title}</h2>
+          )}
           <p className="text-center text-gray-600 max-w-3xl mx-auto">
             {description.split("<br />").map((line, i) => (
               <span key={i}>
@@ -85,12 +82,6 @@ export function Testimonials({
                     {testimonial.text}
                   </p>
                 </div>
-                <button
-                  onClick={() => openInNewTab(testimonial.social)}
-                  className="absolute top-4 right-4 hover:opacity-80 transition-opacity"
-                >
-                  <Icons.twitter className="h-4 w-4 text-[#1DA1F2]" aria-hidden="true" />
-                </button>
               </Card>
             ))}
         </div>

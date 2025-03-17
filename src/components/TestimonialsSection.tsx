@@ -1,6 +1,5 @@
 import React from 'react';
 import { AnimatedTestimonials } from './ui/animated-testimonials';
-import { FaTwitter } from 'react-icons/fa';
 import { Testimonials } from './ui/testimonials';
 
 const TestimonialsSection = () => {
@@ -156,9 +155,6 @@ const TestimonialsSection = () => {
                       <h3 className="font-bold text-[#064088]">Student {studentNum}</h3>
                       <p className="text-sm text-gray-600">Text {studentNum}</p>
                     </div>
-                    <a href="#" className="ml-auto text-blue-400 hover:text-blue-500">
-                      <FaTwitter size={18} />
-                    </a>
                   </div>
                   <p className="text-gray-700">This student had an amazing experience with INTERLINK's language programs.</p>
                 </div>
@@ -173,7 +169,7 @@ const TestimonialsSection = () => {
             </h3>
             <Testimonials 
               testimonials={shadcnTestimonials} 
-              title="What Our Community Says"
+              title=""
               description="Read testimonials from students who have transformed their language skills with INTERLINK"
             />
           </div>
